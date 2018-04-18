@@ -1,7 +1,7 @@
 {
   "name": "robotic-hand",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "A node.js program that interacts with an arduino-based prosthetic limb.",
   "main": "index.js",
   "scripts": {
     "test": "node index.js"
