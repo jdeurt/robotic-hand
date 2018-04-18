@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/jdeurt/robotic-hand/issues"
   },
-  "homepage": "https://github.com/jdeurt/robotic-hand#readme"
+  "homepage": "https://github.com/jdeurt/robotic-hand#readme",
+  "dependencies": {
+    "johnny-five": "^0.14.3"
+  }
 }
