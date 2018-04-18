@@ -20,10 +20,8 @@ board.on("ready", function() {
             pinky: new five.Servo(config.ports.PINKY_FINGER_MOTOR),
         }
     };
-    for(let prop in arm.fingers) {
-        arm.fingers[prop].to(0);
-    }
-    arm.fingers.middle.to(180);
+    arm.fingers.thumb.to(20);
+    arm.fingers.index.to(20);
 });
 
 
