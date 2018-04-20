@@ -14,10 +14,10 @@ board.on("ready", function() {
         wrist: new five.Servo(config.ports.WRIST_SERVO),
         fingers: {
             thumb: new five.Servo(config.ports.THUMB_MOTOR),
-            index: new five.Servo(config.ports.INDEX_FINGER_MOTOR),
-            middle: new five.Servo(config.ports.MIDDLE_FINGER_MOTOR),
-            ring: new five.Servo(config.ports.RING_FINGER_MOTOR),
-            pinky: new five.Servo(config.ports.PINKY_FINGER_MOTOR),
+            index: new five.Servo(config.ports.G1_MOTOR),
+            middle: new five.Servo(config.ports.G1_MOTOR),
+            ring: new five.Servo(config.ports.G2_MOTOR),
+            pinky: new five.Servo(config.ports.G2_MOTOR),
         }
     };
     arm.fingers.thumb.to(20);
