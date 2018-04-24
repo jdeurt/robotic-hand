@@ -3,7 +3,14 @@ const flex = require("./lib/flex");
 const five = require("johnny-five");
 const board = new five.Board();
 
-board.on("ready", function() {
+console.log(`
+    JS -> Python.
+    Beause I can.
+    Robotics 2018 Arduino Arm Project.
+    - Juan de Urtubey
+`);
+
+board.on("ready", () => {
     const flex: {
         thumb: new five.sensor({
             pin: "A0",
@@ -25,5 +32,3 @@ board.on("ready", function() {
     flex.g1.on("change", p => console.log(flex.precent(p)));
     flex.g2.on("change", p => console.log(flex.precent(p)));
 });
-
-
