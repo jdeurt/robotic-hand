@@ -1,27 +1,29 @@
 const config = require("./config");
+const flex = require("./lib/flex");
 const five = require("johnny-five");
 const board = new five.Board();
 
 board.on("ready", function() {
-    let led = {
-        success: new five.Led(config.ports.SUCCESS_LED),
-        warn: new five.Led(config.ports.WARN_LED),
-        error: new five.Led(config.ports.ERROR_LED)
+    const flex: {
+        thumb: new five.sensor({
+            pin: "A0",
+            freq: 250,
+            threshold: 10
+        }),
+        g1: new five.sensor({
+            pin: "A1",
+            freq: 250,
+            threshold: 10
+        }),
+        g2: new five.sensor({
+            pin: "A2",
+            freq: 250,
+            threshold: 10
+        })
     };
-    let arm = {
-        shoulder: new five.Servo(config.ports.SHOULDER_SERVO),
-        elbow: new five.Servo(config.ports.ELBOW_SERVO),
-        wrist: new five.Servo(config.ports.WRIST_SERVO),
-        fingers: {
-            thumb: new five.Servo(config.ports.THUMB_MOTOR),
-            index: new five.Servo(config.ports.G1_MOTOR),
-            middle: new five.Servo(config.ports.G1_MOTOR),
-            ring: new five.Servo(config.ports.G2_MOTOR),
-            pinky: new five.Servo(config.ports.G2_MOTOR),
-        }
-    };
-    arm.fingers.thumb.to(20);
-    arm.fingers.index.to(20);
+    flex.thumb.on("change", p => console.log(flex.precent(p)));
+    flex.g1.on("change", p => console.log(flex.precent(p)));
+    flex.g2.on("change", p => console.log(flex.precent(p)));
 });
 
 
